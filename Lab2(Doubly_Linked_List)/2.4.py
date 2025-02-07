@@ -1,6 +1,6 @@
 #LAB2
 #2023-EE-165  WALEED AKRAM
-print("hello")
+
 #2.4: ToList Method
 class Node:
     def __init__(self,p,i,n):
