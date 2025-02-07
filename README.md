@@ -1,7 +1,3 @@
-That sounds great! Here's a professional yet welcoming README content for your DSA lab repository:
-
----
-
 # 🚀 DSA Lab Repository 🚀
 
 Greetings! 👋  
