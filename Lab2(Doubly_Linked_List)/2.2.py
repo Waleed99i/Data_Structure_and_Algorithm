@@ -1,6 +1,5 @@
 #LAB2
 #2023-EE-165  WALEED AKRAM
-print("2.2")
 
 #2.2: AddFirst and AddLast Methods
 class Node:
