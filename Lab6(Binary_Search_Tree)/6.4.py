@@ -13,13 +13,14 @@ class BSTMap:
     def __init__(self):
         self.root = None
 
-    # Insert method
+    # Insert method (public method)
     def insert(self, k, v):
         self.root = self._insert(self.root, k, v)
 
+    #(our private insert method)
     def _insert(self, r, k, v):
         # Using RECURSION
-        # Base case: if the current node is None, create a new Vertex
+        # Base case: if the current node/root(r) is None, create a new Vertex
         if r is None:
             return Vertex(k, v)
         else:
@@ -50,14 +51,17 @@ class BSTMap:
         # Using RECURSION
         if r is None:
             return None
-        if k < r.key:
-            smaller_problem = r.left
-            return self._find(smaller_problem, k)  # Call function and give smaller_problem as argument
-        elif k > r.key:
-            smaller_problem = r.right
-            return self._find(smaller_problem, k)  # Call function and give smaller_problem as argument
         else:
-            return r.value  # Key found, return the value
+            if k < r.key:
+                smaller_problem1 = r.left
+                smaller_result1 = self._find(smaller_problem1 , k)  # Call function and give smaller_problem as argument
+                return smaller_result1  
+            elif k > r.key:
+                smaller_problem2 = r.right
+                smaller_result2 = self._find(smaller_problem2 , k) # Call function and give smaller_problem as argument
+                return smaller_result2  
+            else:
+                return r.value  # Key found, return the value
 
 # Example usage
 t = BSTMap()
