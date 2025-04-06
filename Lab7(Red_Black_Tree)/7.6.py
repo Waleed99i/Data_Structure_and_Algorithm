@@ -3,7 +3,7 @@
 # WALEED AKRAM
 
 
-# 7.5 THE COLOR FLIP METHOD
+# 7.6 The Insert Method
 class Vertex:
     def __init__(self, k, v, color='b'):  # Default color is black 'b'
         self.key = k
