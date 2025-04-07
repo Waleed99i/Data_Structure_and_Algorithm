@@ -11,3 +11,4 @@ class Vertex:
         self.left = None
         self.right = None
         self.color = color  # New attribute for color representation
+

@@ -2,7 +2,7 @@
 # 2023-EE-165
 # WALEED AKRAM
 
-# 7.6 The Insert Method
+# 7.7  The Find Method
 class Vertex:
     def __init__(self, k, v, color='b'):  # Default color is black 'b'
         self.key = k
@@ -46,8 +46,6 @@ class RBTree:  # I used RBTMap instead of BSTMap for differentiation
             return child  # Return the new root after rotation
         else:
             raise ValueError("Node cannot be rotated right; no left child available.")
-
-
 
     def color_flip(self, node):
         """
@@ -130,6 +128,38 @@ class RBTree:  # I used RBTMap instead of BSTMap for differentiation
 
 
 
+    def find(self, key):
+        """
+        Returns True if the key is found in the tree, otherwise returns False.
+        """
+        return self._find(self.root, key)
+
+
+    def _find(self, node, key):
+        #RECURSION
+        # Base case: if the current node is None, the key is not found
+        if node is None:
+            return False
+        
+        else:
+            # If the key matches the current node's key, return True
+            if key == node.key:
+                return True
+            
+            # If the key is less than the current node's key, search in the left subtree
+            elif key < node.key:
+                smaller_problem1 = node.left
+                smaller_result1 = self._find(smaller_problem1,key)
+                return smaller_result1
+            
+            # If the key is greater than the current node's key, search in the right subtree
+            else:
+                smaller_problem2 = node.right
+                smaller_result2 = self._find(smaller_problem2 , key)
+                return smaller_result2
+
+
+
 # Function calls to test the insertion and find methods
 if __name__ == "__main__":
     T = RBTree()
@@ -138,6 +168,9 @@ if __name__ == "__main__":
     T.insert(30, "Value 30")
     T.insert(15, "Value 15")
     T.insert(25, "Value 25")
-    
 
+    # Test the find method
+    print(T.find(10))  # Should return True
+    print(T.find(15))  # Should return True
+    print(T.find(100)) # Should return False
 

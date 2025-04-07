@@ -17,7 +17,7 @@ class RBTree:  #I used RBTMap instead of BSTMap for differentiation
     def __init__(self):
         self.root = None
 
-    def rotate_left(self , root):
+    def rotate_left(self, root):
         if root.right is not None:
             # Step 1: Store the right child
             child = root.right  
@@ -28,12 +28,12 @@ class RBTree:  #I used RBTMap instead of BSTMap for differentiation
             # Step 3: Make the current root the left child of the right child
             child.left = root  
         
-            root = child  
+            return child  # Return the new root after rotation
         else:
             raise ValueError("Node cannot be rotated left; no right child available.")
 
     
-    def rotate_right(self , root):
+    def rotate_right(self, root):
         if root.left is not None:
             # Step 1: Store the left child
             child = root.left  
@@ -44,7 +44,7 @@ class RBTree:  #I used RBTMap instead of BSTMap for differentiation
             # Step 3: Make the current root the right child of the left child
             child.right = root  
       
-            root = child  
+            return child  # Return the new root after rotation
         else:
             raise ValueError("Node cannot be rotated right; no left child available.")
 
